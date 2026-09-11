@@ -21,6 +21,16 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 
 # How to Deploy
 
+## Supported Versions
+
+| BSP Version | QLI Version |
+| :--- | :--- |
+| 2.5.x | 2.0 or later |
+
+Check both with `uname -a`. The kernel release string carries them as `ver.<BSP version>` and `qli-<QLI version>`.
+
+> Note: On QLI 1.x, see the [changelog](../../../docs/changelog.md) for the matching iQ-Studio release. To move to QLI 2.0, flash an image from [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest).
+
 ## What You Need?
 
 1. At least 3 GB of free disk space
@@ -33,7 +43,6 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
->Note: If you are using Ubuntu, please log in again after installation.
 
 # How to Use
 1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
