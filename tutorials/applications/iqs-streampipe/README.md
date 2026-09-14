@@ -25,7 +25,7 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 
 | BSP Version | QLI Version |
 | :--- | :--- |
-| 2.5.x | 2.0 or later |
+| 2.5.x | 2.0 |
 
 - **BSP version** — read `/etc/innodisk/BSP-version`.
 - **QLI version** — run `uname -a` and look for the `qli-<version>` field.
