@@ -34,7 +34,7 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 
 ## What You Need?
 
-1. At least 3 GB of free disk space
+1. At least 10 GB of free disk space
 2. A monitor
 
 ## How to Start?
