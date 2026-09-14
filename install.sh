@@ -17,6 +17,30 @@ INSTALL_PATH="/usr/local/bin"
 # Path for the Python virtual environment.
 PYTHON_VENV="$ROOT/iqs-venv"
 
+# --- Check BSP version ---
+# The applications in this repository are validated on BSP 2.5 (QLI 2.0) and later.
+# Override BSP_VERSION_FILE only for testing.
+BSP_VERSION_FILE="${BSP_VERSION_FILE:-/etc/innodisk/BSP-version}"
+REQUIRED_BSP="2.5"
+
+if [ ! -f "$BSP_VERSION_FILE" ]; then
+    echo "Error: $BSP_VERSION_FILE not found." >&2
+    echo "iQ-Studio requires an Innodisk BSP image. See https://github.com/InnoIPA/meta-iQ__manifest" >&2
+    exit 1
+fi
+
+BSP_VERSION=$(grep -oE '[0-9]+\.[0-9]+' "$BSP_VERSION_FILE" | head -1 || true)
+if [ -z "$BSP_VERSION" ]; then
+    echo "Error: could not read a version number from $BSP_VERSION_FILE." >&2
+    exit 1
+fi
+
+# String compare fails on 2.10 vs 2.5, so sort the two versions and check the order.
+if [ "$(printf '%s\n%s\n' "$REQUIRED_BSP" "$BSP_VERSION" | sort -V | head -1)" != "$REQUIRED_BSP" ]; then
+    echo "Error: BSP $BSP_VERSION is not supported. iQ-Studio requires BSP $REQUIRED_BSP or later." >&2
+    exit 1
+fi
+
 # --- Setup ---
 # Create and activate Python virtual environment.
 mkdir -p "$PYTHON_VENV" || echo "venv directory already exists."
