@@ -27,7 +27,8 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 | :--- | :--- |
 | 2.5.x | 2.0 or later |
 
-Check both with `uname -a`. The kernel release string carries them as `ver.<BSP version>` and `qli-<QLI version>`.
+- **BSP version** — read `/etc/innodisk/BSP-version`.
+- **QLI version** — run `uname -a` and look for the `qli-<version>` field.
 
 > Note: On QLI 1.x, see the [changelog](../../../docs/changelog.md) for the matching iQ-Studio release. To move to QLI 2.0, flash an image from [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest).
 
