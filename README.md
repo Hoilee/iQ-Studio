@@ -128,6 +128,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/applications/iqs-vlm/README.md">iQS-VLM</a></li>
           <li><a href="./tutorials/applications/iqs-streampipe/README.md">iQS-Streampipe</a></li>
           <li><a href="./tutorials/applications/iqs-yolov10n/README.md">YOLOv10n INT8 Inference on GPU and NPU</a></li>
+          <li><a href="./tutorials/applications/iqs-qvadk/README.md">iQS-QVADK</a></li>
         </ul>
       </td>
     </tr>
