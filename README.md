@@ -150,6 +150,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/sdks/README.md">SDKs Overview</a></li>
           <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM: How to Interact with the OGenie Server through Open WebUI</a></li>
           <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe: How to Change the Custom Model and Video Source</a></li>
+          <li><a href="./tutorials/sdks/iqs-qvadk/README.md">iQS-QVADK: How to Switch and Run the Applications</a></li>
           <li><a href="./tutorials/sdks/iqs-ogenie/README.md">iQS-OGenie: Run Your Own Demo with OGenie Server</a></li>
         </ul>
       </td>
