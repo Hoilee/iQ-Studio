@@ -25,31 +25,56 @@ In this section, we describe how to switch between the applications of iqs-qvadk
 
 ## How to switch and run an application
 
-The `configs/` directory in the current directory holds the config of each application. Pass one with `--other "-c /workspace/<config>"`. Without it, iqs-qvadk runs the PPE application.
+iqs-qvadk provides three applications: **PPE**, **Defect detection** and **DMS**. PPE also has camera variants that take live input from a UVC or GMSL camera.
 
-1. Navigate to the iqs-qvadk directory.
+| Application | Channels | Models | Classes | Description | Preview |
+| --- | :---: | --- | --- | --- | :---: |
+| PPE | 9 | yolov26n, scrfd | 5 (yolov26n), 1 (scrfd) | Runs PPE and ROI person detection on 9 streams. With face mosaic enabled, 18 models run at the same time. | <img src="./fig/ppe_thumb.png" width="240"> |
+| Defect detection | 6 | yolov10n | 1 | Runs one independent YOLO model on each of 6 streams to detect screw defects on a production line. | <img src="./fig/dd_thumb.png" width="240"> |
+| DMS | 3 | scrfd, landmark, resnet18, resnet50 | 1 (scrfd), 1 (landmark), 2 and 3 (resnet18), 5 (resnet50) | Chains face, gaze, hand and body models on each of 3 driver streams (5 models in total) and shows a warning on high-risk behavior. | <img src="./fig/dms_thumb.png" width="240"> |
 
-    ```bash
-    cd tutorials/sdks/iqs-qvadk/
-    ```
+### How to switch
 
-2. Run the iqs-launcher with the command of the application you want.
+Run the commands from the iqs-qvadk directory (`cd tutorials/sdks/iqs-qvadk/`). Close the running application before starting another one.
 
-    | Application | Description | Command |
-    | --- | --- | --- |
-    | PPE (default) | Personal protective equipment detection on video files | `iqs-launcher --autotag iqs-qvadk` |
-    | PPE with UVC camera | Channel 0 shows a UVC camera | `iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/uvc/config_ppe_uvc.json"` |
-    | PPE with GMSL camera | Channel 0 shows a GMSL camera | `iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/gmsl/config_ppe_gmsl.json"` |
-    | Defect detection | Defect detection on production line video | `iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/videos/config_dd.json"` |
-    | DMS | Driver monitoring (face / hands / body) | `iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/videos/config_dms.json"` |
+>Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
-3. You will see the result of the selected application on the screen.
-    >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
+#### PPE (default)
 
-    | PPE | Defect detection |
-    | :---: | :---: |
-    | ![ppe](./fig/ppe.gif) | ![defect detection](./fig/dd.gif) |
-    | **DMS** | **PPE with UVC / GMSL camera** |
-    | ![dms](./fig/dms.gif) | ![ppe camera](./fig/ppe_camera.gif) |
+```bash
+iqs-launcher --autotag iqs-qvadk
+```
 
-    > NOTE : To stop the current application and run another one, close it first, then run the command of the next application.
+![PPE (default)](./fig/ppe.gif)
+
+#### PPE with UVC camera
+
+```bash
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/uvc/config_ppe_uvc.json"
+```
+
+![PPE with UVC camera](./fig/ppe_camera.gif)
+
+#### PPE with GMSL camera
+
+```bash
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/gmsl/config_ppe_gmsl.json"
+```
+
+![PPE with GMSL camera](./fig/ppe_camera.gif)
+
+#### Defect detection
+
+```bash
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/videos/config_dd.json"
+```
+
+![Defect detection](./fig/dd.gif)
+
+#### DMS
+
+```bash
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/videos/config_dms.json"
+```
+
+![DMS](./fig/dms.gif)
