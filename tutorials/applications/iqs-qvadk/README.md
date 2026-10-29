@@ -12,6 +12,10 @@ QVADK is a multi-stream AI video pipeline for vertical applications. This demo r
 >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
 <br />
+<div align="center"><img width="80%" height="80%" src="./fig/architecture.svg"></div>
+<br />
+
+<br />
 <div align="center"><img width="80%" height="80%" src="./fig/gif0.gif"></div>
 <br />
 
