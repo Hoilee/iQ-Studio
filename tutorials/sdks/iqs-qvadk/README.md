@@ -20,6 +20,8 @@ In this section, we describe how to switch between the applications of iqs-qvadk
     - 1080p/30fps (1920x1080 pixels)
     - MJPEG compression format
 3. For the GMSL camera application, at least one GMSL camera.
+    - To install and use a GMSL camera, please refer to the [iQ-Cam GMSL Camera Guide](https://github.com/InnoIPA/iQ-Cam__manifest/blob/v3.0.0/doc/common/gmsl.md).
+    > Note: This demo has only been tested with the EV3F-ZSM1 camera.
 
 ## How to switch and run an application
 
