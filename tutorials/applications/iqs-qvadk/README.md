@@ -54,6 +54,13 @@ cd iQ-Studio
 
     ![ppe demo](./fig/gif0.gif)
 
-# How to Switch and Run the Other Applications
+# Switch to Other Applications
 
-For advanced features and usage examples, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.
+Besides the PPE demo above, iqs-qvadk ships with more applications. Each one runs with a single `iqs-launcher` command. Click an application to see its command and demo:
+
+- [**PPE with UVC camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live UVC camera.
+- [**PPE with GMSL camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live GMSL camera.
+- [**Defect detection**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): detects defects on production line video.
+- [**DMS (Driver Monitoring System)**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): monitors the driver's face, hands, and body.
+
+For the hardware each application needs and the full list of commands, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.
