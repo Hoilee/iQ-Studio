@@ -7,7 +7,9 @@
 
 # iQS-QVADK
 
-QVADK is a multi-stream AI video pipeline for vertical applications. This demo runs the **PPE (Personal Protective Equipment) detection** application: it analyzes several video channels at the same time with a YOLO26n INT8 model running on the NPU, and displays the detection results on a monitor.
+QVADK is a high-throughput, multi-stream AI video pipeline built for vertical applications. It takes many 1080p video channels at once and runs several AI models on every channel, all accelerated on the Qualcomm NPU of a single Dragonwing device, so a single box can monitor many cameras in real time.
+
+This demo runs the **PPE (Personal Protective Equipment) detection** application: it analyzes 9 video channels at the same time with a YOLO26n INT8 model running on the NPU, blurs faces to protect privacy, and displays the results live on a monitor.
 
 >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
@@ -47,13 +49,16 @@ cd iQ-Studio
 
 # How to Use
 
-1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
+1. Download the SCRFD face detection model, which is not included in iQ-Studio. Follow [Models You Need to Provide](../../sdks/iqs-qvadk/models/README.md); it takes a few minutes.
+
+2. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image. Run it from the iqs-qvadk directory, where the model was placed.
 
     ```bash
+    cd tutorials/sdks/iqs-qvadk/
     iqs-launcher --autotag iqs-qvadk
     ```
 
-2. You will see the PPE detection result on the screen.
+3. You will see the PPE detection result on the screen.
     >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
     ![ppe demo](./fig/gif0.gif)
