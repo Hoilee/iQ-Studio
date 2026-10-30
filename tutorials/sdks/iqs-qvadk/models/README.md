@@ -44,12 +44,6 @@ The applications expect the file `models/tflite/scrfd_integer_quant.tflite` unde
     ls -l <iQ-Studio>/tutorials/sdks/iqs-qvadk/models/tflite/scrfd_integer_quant.tflite
     ```
 
-    The file size should be 812312 bytes.
-
-4. Run the application from the iqs-qvadk directory as described in the [application guide](../README.md).
-
-> Note: Use exactly the `500m_bnkps` 480x640 `model_integer_quant.tflite`. Other SCRFD variants have a different input size or output layout and do not work with the provided configs.
-
 ## Face Landmark
 
 The face landmark model is used by DMS on the face found by SCRFD. DMS needs it to run; PPE and defect detection do not.
@@ -78,8 +72,6 @@ The DMS application expects the file `models/tflite/face_landmarks_detector_floa
     ls -l <iQ-Studio>/tutorials/sdks/iqs-qvadk/models/tflite/face_landmarks_detector_float16.tflite
     ```
 
-    The file size should be 2553590 bytes.
+## Next Step
 
-4. Run the application from the iqs-qvadk directory as described in the [SDK guide](../README.md).
-
-> Note: Use the `float16` package above. Other versions of the package have not been tested.
+Once the models you need are in place, run the application from the iqs-qvadk directory as described in the [application guide](../README.md).
