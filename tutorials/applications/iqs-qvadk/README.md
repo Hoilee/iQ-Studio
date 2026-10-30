@@ -9,7 +9,12 @@
 
 QVADK is a high-throughput, multi-stream AI video pipeline built for vertical applications. It takes many 1080p video channels at once and runs several AI models on every channel, all accelerated on the Qualcomm NPU of a single Dragonwing device, so a single box can monitor many cameras in real time.
 
-This demo runs the **PPE (Personal Protective Equipment) detection** application: it analyzes 9 video channels at the same time with a YOLO26n INT8 model running on the NPU, blurs faces to protect privacy, and displays the results live on a monitor.
+iqs-qvadk ships with several applications. The demo below runs the default **PPE (Personal Protective Equipment) detection**; click any other application to see its command and demo:
+
+- [**PPE with UVC camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live UVC camera.
+- [**PPE with GMSL camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live GMSL camera.
+- [**Defect detection**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): detects defects on production line video.
+- [**DMS (Driver Monitoring System)**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): monitors the driver's face, hands, and body.
 
 >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
@@ -65,11 +70,4 @@ cd iQ-Studio
 
 # Switch to Other Applications
 
-Besides the PPE demo above, iqs-qvadk ships with more applications. Each one runs with a single `iqs-launcher` command. Click an application to see its command and demo:
-
-- [**PPE with UVC camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live UVC camera.
-- [**PPE with GMSL camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live GMSL camera.
-- [**Defect detection**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): detects defects on production line video.
-- [**DMS (Driver Monitoring System)**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): monitors the driver's face, hands, and body.
-
-For the hardware each application needs and the full list of commands, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.
+Each application listed above runs with a single `iqs-launcher` command. For the hardware each application needs and the full list of commands, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.
